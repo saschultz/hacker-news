@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.today
-    
   end
 
   def show
     @post = Post.find(params[:id])
+
   end
 
   def new
@@ -37,6 +37,13 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
+    redirect_to posts_path
+  end
+
+  def vote
+    @post = Post.find(params[:post_id])
+    current_score = @post.vote
+    @post.update(score: current_score)
     redirect_to posts_path
   end
 

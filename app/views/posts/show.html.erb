@@ -5,8 +5,11 @@
 <p>What did you think of this article?</p>
 <p>Vote to add your favorite articles to the top of our postings list.</p>
 
-<button type="button" name="button">Vote!</button>
+
+<%= button_to 'Vote', post_vote_path(@post) %>
+
 <br><br>
+
 <%= link_to "Edit yo Post!", edit_post_path %>
 <p><%= link_to "Delete", post_path(@post),
                          :data => {:confirm => "You sure?",

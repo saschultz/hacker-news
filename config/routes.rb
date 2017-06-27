@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # resources :posts
 
   resources :posts do
+    post 'vote'
     resources :comments
   end
 end
