@@ -14,7 +14,10 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.score = 0
     if @post.save
+      # default_score = @post.default_score
+      # @post.update(score: default_score)
       redirect_to posts_path
     else
       render :new
@@ -49,7 +52,7 @@ class PostsController < ApplicationController
 
 private
   def post_params
-    params.require(:post).permit(:title, :url, :score => 0)
+    params.require(:post).permit(:title, :url)
   end
 
 end
