@@ -7,4 +7,9 @@
 
 <button type="button" name="button">Vote!</button>
 <br><br>
+<%= link_to "Edit yo Post!", edit_post_path %>
+<p><%= link_to "Delete", post_path(@post),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
+
 <%= link_to "return home", posts_path %>
