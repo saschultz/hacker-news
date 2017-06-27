@@ -1,3 +1,10 @@
 <h1><%= @post.title %></h1>
 <hr>
 <h2><a href="<%= @post.url %>" target="_blank">go to <%= @post.title %> article</a></h2>
+
+<p>What did you think of this article?</p>
+<p>Vote to add your favorite articles to the top of our postings list.</p>
+
+<button type="button" name="button">Vote!</button>
+<br><br>
+<%= link_to "return home", posts_path %>
