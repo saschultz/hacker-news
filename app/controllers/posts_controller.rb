@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.today
+    
   end
 
   def show
