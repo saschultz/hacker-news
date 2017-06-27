@@ -1,10 +1,13 @@
 <h1>News</h1>
 
+<h2>Most Popular Posts for Today</h2>
+
 <ul>
   <% @posts.each do |post| %>
-  <li><%= link_to post.title, post_path(post) %></li>
+      <li><%= link_to post.title, post_path(post) %></li>
   <% end %>
 </ul>
 
+<!-- <%= link_to "Archive", posts_path %> -->
 
 <%= link_to "Make a new post!", new_post_path %>
