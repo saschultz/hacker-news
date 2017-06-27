@@ -12,4 +12,21 @@
                          :data => {:confirm => "You sure?",
                                    :method => "delete"} %></p>
 
+<% if @post.comments.any? %>
+  <h4>Article comments</h4>
+  <ul>
+    <% @post.comments.each do |comment| %>
+      <li>
+        <div class="well">
+          <%= comment.description %><br>
+          - <%= comment.author %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no comments yet!</p>
+<% end %>
+
+<p><%= link_to "Add comment", new_post_comment_path(@post) %></p>
 <%= link_to "return home", posts_path %>
